@@ -39,7 +39,7 @@ const ECCPage = (() => {
                 <!-- Main content area -->
                 <div class="ecc-main">
                     <div class="ecc-header">
-                        <h1>Welcome to Security Control Centre</h1>
+                        <h1>Welcome to Enterprise Control Centre</h1>
                         <p>Centralized role-based management for <strong>CLaaS<span class="gold">2</span>SaaS</strong></p>
                     </div>
 
