@@ -17,7 +17,7 @@ const DashboardPage = (() => {
 
         center.innerHTML = `
             <div class="dashboard-content">
-                <h1 class="dashboard-title">Kernel App</h1>
+                <h1 class="dashboard-title">Kernel Apps</h1>
                 <p class="dashboard-desc">Centralized management platform for security, administration, and support operations. Select a module below to access specialized controls and monitoring.</p>
 
                 <div class="dashboard-cards">
