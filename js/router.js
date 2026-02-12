@@ -11,6 +11,7 @@ const Router = (() => {
         'first-time':        () => PlaceholderPage.render('first-time'),
         'ecc':               () => ECCPage.render(),
         'kernel-dashboard':  () => DashboardPage.render(),
+        'scc-dashboard':     () => SCCDashboardPage.render(),
         'module-mgmt':       () => ModuleMgmtPage.render(),
         'user-profile':      () => UserProfilePage.render(),
         'role-mgmt':         () => RoleMgmtPage.render(),

@@ -13,6 +13,7 @@ const Components = (() => {
             label: 'Security Control Centre',
             icon: 'fa-shield-halved',
             items: [
+                { id: 'scc-dashboard', label: 'Dashboard', icon: 'fa-chart-pie' },
                 { id: 'module-mgmt', label: 'Module Management', icon: 'fa-cubes' },
                 { id: 'user-profile', label: 'User Profile Enrichment', icon: 'fa-user-pen' },
                 { id: 'role-mgmt', label: 'Security Role Management', icon: 'fa-user-lock' },
@@ -83,6 +84,11 @@ const Components = (() => {
                 </div>
             `;
         } else if (context === 'kernel') {
+            const currentHash = window.location.hash.replace('#', '');
+            const activeModKey = getModuleForPage(currentHash);
+
+            const moduleShortLabels = { scc: 'SCC', acc: 'ACC', helpdesk: 'Helpdesk' };
+
             navEl.innerHTML = `
                 <div class="nav-left">
                     <button class="nav-icon-btn sidebar-toggle" onclick="Components.toggleSidebar()"><i class="fas fa-bars"></i></button>
@@ -90,7 +96,17 @@ const Components = (() => {
                         <span class="brand-c">C</span><span class="brand-l">L</span><span class="brand-a1">a</span><span class="brand-a2">a</span><span class="brand-s1">S</span><span class="brand-2">2</span><span class="brand-s2">S</span><span class="brand-a3">a</span><span class="brand-a4">a</span><span class="brand-s3">S</span>
                     </div>
                     <span class="nav-separator">|</span>
-                    <span class="nav-module-name">Kernel Command & Control</span>
+                    <span class="nav-module-name">Kernel</span>
+                </div>
+                <div class="nav-center">
+                    ${Object.entries(MODULE_NAV).map(([key, mod]) => `
+                        <button class="nav-module-pill ${activeModKey === key ? 'active' : ''}"
+                            onclick="Router.navigate('${mod.items[0].id}')"
+                            title="${mod.label}">
+                            <i class="fas ${mod.icon}"></i>
+                            <span>${moduleShortLabels[key]}</span>
+                        </button>
+                    `).join('')}
                 </div>
                 <div class="nav-right">
                     <button class="nav-btn-back" onclick="Router.navigate('ecc')" title="Back to ECC"><i class="fas fa-th-large"></i> ECC</button>
@@ -124,9 +140,6 @@ const Components = (() => {
             sidebar.innerHTML = `
                 <div class="sidebar-header">
                     <div class="sidebar-module-title"><i class="fas fa-cube"></i> Kernel App</div>
-                    <button class="sidebar-home-btn" onclick="Router.navigate('kernel-dashboard')">
-                        <i class="fas fa-house"></i> <span>Dashboard</span>
-                    </button>
                 </div>
                 <nav class="sidebar-nav">
                     ${Object.entries(MODULE_NAV).map(([key, mod]) => `

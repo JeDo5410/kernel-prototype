@@ -21,7 +21,7 @@ const DashboardPage = (() => {
                 <p class="dashboard-desc">Centralized management platform for security, administration, and support operations. Select a module below to access specialized controls and monitoring.</p>
 
                 <div class="dashboard-cards">
-                    <div class="dashboard-card scc-card" onclick="Router.navigate('module-mgmt')">
+                    <div class="dashboard-card scc-card" onclick="Router.navigate('scc-dashboard')">
                         <div class="card-accent scc-accent"></div>
                         <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
                         <h2>Security Control Centre</h2>

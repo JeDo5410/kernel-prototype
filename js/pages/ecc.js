@@ -13,7 +13,6 @@ const ECCPage = (() => {
         Components.hideSidebar();
         Components.renderNavbar('ecc');
 
-        const solutions = Store.getSolutions();
         const allModules = Store.getAll('solutions_modules');
         const filtered = activeFilter === 'all'
             ? allModules
@@ -26,14 +25,9 @@ const ECCPage = (() => {
             <div class="ecc-layout">
                 <!-- Left solution filter nav -->
                 <div class="ecc-sidebar">
-                    <button class="ecc-filter-btn ${activeFilter === 'all' ? 'active' : ''}" onclick="ECCPage.filter('all')">
+                    <button class="ecc-filter-btn active" onclick="ECCPage.filter('all')">
                         <i class="fas fa-house"></i> Home
                     </button>
-                    ${solutions.map(s => `
-                        <button class="ecc-filter-btn ${activeFilter === s.code ? 'active' : ''}" onclick="ECCPage.filter('${s.code}')">
-                            <i class="fas fa-folder"></i> ${s.name}
-                        </button>
-                    `).join('')}
                 </div>
 
                 <!-- Main content area -->
