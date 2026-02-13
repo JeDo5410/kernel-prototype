@@ -44,9 +44,9 @@ const UserRoleAssignPage = (() => {
                     </div>
 
                     <div class="filter-tabs">
-                        <button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" onclick="UserRoleAssignPage.setFilter('all')">All Assignments</button>
-                        <button class="filter-btn ${activeFilter === 'active' ? 'active' : ''}" onclick="UserRoleAssignPage.setFilter('active')">Active Only</button>
-                        <button class="filter-btn ${activeFilter === 'inactive' ? 'active' : ''}" onclick="UserRoleAssignPage.setFilter('inactive')">Inactive Only</button>
+                        <button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" onclick="UserRoleAssignPage.setFilter('all')"><i class="fas fa-list"></i> All Assignments</button>
+                        <button class="filter-btn ${activeFilter === 'active' ? 'active' : ''}" onclick="UserRoleAssignPage.setFilter('active')"><i class="fas fa-circle-check"></i> Active</button>
+                        <button class="filter-btn ${activeFilter === 'inactive' ? 'active' : ''}" onclick="UserRoleAssignPage.setFilter('inactive')"><i class="fas fa-circle-xmark"></i> Inactive</button>
                     </div>
 
                     <table class="data-table">

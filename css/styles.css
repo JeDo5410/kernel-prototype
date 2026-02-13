@@ -212,6 +212,13 @@ code{background:rgba(25,62,107,.06);padding:2px 6px;border-radius:4px;font-size:
 .btn-manage{background:rgba(68,142,157,.1);color:var(--secondary);border:1px solid var(--secondary);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;transition:all .2s;display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading)}
 .btn-manage:hover{background:var(--secondary);color:var(--white)}
 
+/* Filter Tabs */
+.filter-tabs{display:flex;align-items:center;gap:4px;background:rgba(0,0,0,.04);border-radius:10px;padding:4px;width:fit-content;margin-bottom:16px}
+.filter-btn{display:flex;align-items:center;gap:7px;background:none;border:none;color:#777;padding:7px 16px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:500;font-family:var(--font-heading);transition:all .18s;white-space:nowrap}
+.filter-btn:hover{color:var(--primary);background:rgba(255,255,255,.7)}
+.filter-btn.active{background:var(--white);color:var(--primary);box-shadow:0 1px 4px rgba(0,0,0,.1);font-weight:600}
+.filter-btn.active i{color:var(--jelly-blue)}
+
 /* Data Tables (mockup style) */
 .data-table-wrapper{background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);padding:25px}
 .table-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
